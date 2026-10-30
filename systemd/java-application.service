@@ -1,0 +1,14 @@
+[Unit]
+Description=Java Application Metrics Exporter
+After=network.target
+
+[Service]
+Type=simple
+User=labuser
+WorkingDirectory=/home/labuser/java_examples/java_simple
+ExecStart=/usr/bin/java -jar /home/labuser/java_examples/java_simple/target/java_simple-1.0-SNAPSHOT-jar-with-dependencies.jar
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
